@@ -14,10 +14,10 @@ app.use(cors());
 
 // Set up routes
 app.get("/", (req, res) => {
-    res.send("welcome to the Ice Ceam API");
+    res.send("Where do you want to go on holiday?");
 });
 
-app.get("/flavours", (req, res) => {
+app.get("/countries", (req, res) => {
     let flavours = data;
     
     if (req.query.vegan) {
@@ -28,7 +28,7 @@ app.get("/flavours", (req, res) => {
     });
 });
 
-app.get("/flavours/:id", (req, res) => {
+app.get("/country/:id", (req, res) => {
     const id = req.params.id;
     const filteredData = data.filter(f => f["id"] == id)
 
@@ -39,7 +39,7 @@ app.get("/flavours/:id", (req, res) => {
         })
     } else {
         res.status(404).json({
-            error: "No such ice cream"
+            error: ""
         })
     }
 
