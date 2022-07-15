@@ -18,56 +18,68 @@ app.get("/", (req, res) => {
 });
 
 app.get("/countries", (req, res) => {
-    let flavours = data;
+    let countries = data;
     
-    if (req.query.vegan) {
-        flavours = flavours.filter(f => f["vegan"])
+    if (req.query.isEu === "true") {
+        countries = countries.filter(country => country["isEu"])
+    } else if (req.query.isEu === "false"){
+        countries = countries.filter(country => !country["isEu"])
     }
     res.json({
-        flavours: flavours.map(f => f.flavour)
+        countries: countries.map(country => country.name)
     });
 });
 
-app.get("/country/:id", (req, res) => {
-    const id = req.params.id;
-    const filteredData = data.filter(f => f["id"] == id)
+app.get("/countries/:name", (req, res) => {
+    const id = req.params.name;
+    const filteredData = data.filter(f => f["name"] == id)
 
     // Handle errors
     if (filteredData.length == 1) {
         res.json({
-            flavour: filteredData[0]
+            ...filteredData[0]
         })
     } else {
         res.status(404).json({
-            error: ""
+            error: "Sorry, this country is not in our database"
         })
     }
-
-
 });
 
-app.post("/flavours", (req, res) => {
-    const newId = data.length + 1;
-    const newFlavour = req.body;
-    newFlavour.id = newId;
-    data.push(newFlavour);
+app.get("/currency/:currency", (req, res) => {
+    const currency = req.params.currency
+    const filteredData = data.filter(country => country.currency == currency)
+    if(filteredData.length >= 1) {
+        res.json({...filteredData})
+    } else {
+        res.status(404).json({
+            error: "Sorry, no countries have this currency in our database"
+        })
+    }
+})
+
+app.post("/countries", (req, res) => {
+    const newCountry = req.body;
+    newCountry.id = data.length +1;
+    data.push(newCountry);
     res.status(201).json({
-        success: true
+        success: true,
+        country: newCountry
     })
 })
 
-app.delete("/flavours/:id", (req,res) => {
+app.delete("/countries/:id", (req, res) => {
     const reqId = req.params.id;
-    const entry = data.filter(f => f.id == reqId)[0];
-    const index = entry.id;
+    const entry = data.filter(item => item.id == reqId)[0];
     
-    data.splice(index - 1, 1);
+    data.splice(reqId - 1, 1);
     
-    res.status(200).json({
+    res.status(204).json({
         success: true,
         removed: {...entry}
     });
 })
+
 
 
 module.exports = app;    
