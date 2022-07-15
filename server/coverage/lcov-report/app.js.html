@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.9% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/44</span>
+                <span class='fraction'>44/44</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>26/39</span>
+                <span class='fraction'>39/39</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -196,34 +196,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -279,35 +279,35 @@ app.get("/countries/:name", (req, res) =&gt; {
     }
 });
 &nbsp;
-app.get("/currency/:currency", <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-    const currency = <span class="cstat-no" title="statement not covered" >req.params.currency</span>
-    const filteredData = <span class="cstat-no" title="statement not covered" >data.filter(<span class="fstat-no" title="function not covered" >co</span>untry =&gt; <span class="cstat-no" title="statement not covered" >country.currency == currency)</span></span>
-<span class="cstat-no" title="statement not covered" >    if(filteredData.length &gt;= 1) {</span>
-<span class="cstat-no" title="statement not covered" >        res.json({...filteredData})</span>
+app.get("/currency/:currency", (req, res) =&gt; {
+    const currency = req.params.currency
+    const filteredData = data.filter(country =&gt; country.currency == currency)
+    if(filteredData.length &gt;= 1) {
+        res.json({...filteredData})
     } else {
-<span class="cstat-no" title="statement not covered" >        res.status(404).json({</span>
+        res.status(404).json({
             error: "Sorry, no countries have this currency in our database"
         })
     }
 })
 &nbsp;
-app.post("/countries", <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-    const newCountry = <span class="cstat-no" title="statement not covered" >req.body;</span>
-<span class="cstat-no" title="statement not covered" >    newCountry.id = data.length +1;</span>
-<span class="cstat-no" title="statement not covered" >    data.push(newCountry);</span>
-<span class="cstat-no" title="statement not covered" >    res.status(201).json({</span>
+app.post("/countries", (req, res) =&gt; {
+    const newCountry = req.body;
+    newCountry.id = data.length +1;
+    data.push(newCountry);
+    res.status(201).json({
         success: true,
         country: newCountry
     })
 })
 &nbsp;
-app.delete("/countries/:id", <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-    const reqId = <span class="cstat-no" title="statement not covered" >req.params.id;</span>
-    const entry = <span class="cstat-no" title="statement not covered" >data.filter(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.id == reqId)</span>[0];</span>
+app.delete("/countries/:id", (req, res) =&gt; {
+    const reqId = req.params.id;
+    const entry = data.filter(item =&gt; item.id == reqId)[0];
     
-<span class="cstat-no" title="statement not covered" >    data.splice(reqId - 1, 1);</span>
+    data.splice(reqId - 1, 1);
     
-<span class="cstat-no" title="statement not covered" >    res.status(204).json({</span>
+    res.status(204).json({
         success: true,
         removed: {...entry}
     });
@@ -322,7 +322,7 @@ module.exports = app;    </pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-07-15T14:46:08.054Z
+                at 2022-07-15T14:53:06.378Z
             </div>
         <script src="prettify.js"></script>
         <script>

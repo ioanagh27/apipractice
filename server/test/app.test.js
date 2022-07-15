@@ -39,14 +39,25 @@ describe("API", () => {
         request(api).get("/countries/England").expect(200, done);
     })
         
+    it("Responds to a GET requrest at /currency/:currency with a 200 status", (done) => {
+        request(api).get("/currency/euro").expect(200, done);
+    })
+
+    it("Responds to an incorrect GET requrest at /currency/:currency with a 404 status", (done) => {
+        request(api).get("/currency/sadfasdfasdfasdfsadf").expect(404, done);
+    })
+        
     it("Responds to an incorrect GET requrest at /countries/:name with a 404 status", (done) => {
         request(api).get("/countries/Engasdfasdfadsfland").expect(404, done);
     })
             
-    it("Responds to an incorrect POST requrest at /countries/ with a 404 status", (done) => {
-        request(api).post("/countries/", (err, res) => {
-            expect(201, done)
-        })
+    it("Responds to a POST requrest at /countries/ with a 201 status", (done) => {
+        request(api).post("/countries").expect(201, done);
     })
+                
+    it("Responds to a DELETE requrest at /countries/:id with a 204 status", (done) => {
+        request(api).delete("/countries/3").expect(204, done);
+    })
+
 
 })

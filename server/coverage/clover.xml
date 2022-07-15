@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657896368091" clover="3.2.0">
-  <project timestamp="1657896368092" name="All files">
-    <metrics statements="41" coveredstatements="28" conditionals="8" coveredconditionals="6" methods="12" coveredmethods="7" elements="61" coveredelements="41" complexity="0" loc="41" ncloc="41" packages="1" files="2" classes="2"/>
+<coverage generated="1657896786417" clover="3.2.0">
+  <project timestamp="1657896786417" name="All files">
+    <metrics statements="39" coveredstatements="39" conditionals="8" coveredconditionals="8" methods="12" coveredmethods="12" elements="59" coveredelements="59" complexity="0" loc="39" ncloc="39" packages="1" files="1" classes="1"/>
     <file name="app.js" path="C:\Users\Agi\Documents\projects\futureproof-projects\apiPractice\server\app.js">
-      <metrics statements="39" coveredstatements="26" conditionals="8" coveredconditionals="6" methods="12" coveredmethods="7"/>
+      <metrics statements="39" coveredstatements="39" conditionals="8" coveredconditionals="8" methods="12" coveredmethods="12"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -27,27 +27,22 @@
       <line num="39" count="1" type="stmt"/>
       <line num="43" count="1" type="stmt"/>
       <line num="49" count="1" type="stmt"/>
-      <line num="50" count="0" type="stmt"/>
-      <line num="51" count="0" type="stmt"/>
-      <line num="52" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="53" count="0" type="stmt"/>
-      <line num="55" count="0" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="51" count="12" type="stmt"/>
+      <line num="52" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="53" count="1" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
       <line num="61" count="1" type="stmt"/>
-      <line num="62" count="0" type="stmt"/>
-      <line num="63" count="0" type="stmt"/>
-      <line num="64" count="0" type="stmt"/>
-      <line num="65" count="0" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="63" count="1" type="stmt"/>
+      <line num="64" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
       <line num="71" count="1" type="stmt"/>
-      <line num="72" count="0" type="stmt"/>
-      <line num="73" count="0" type="stmt"/>
-      <line num="75" count="0" type="stmt"/>
-      <line num="77" count="0" type="stmt"/>
+      <line num="72" count="1" type="stmt"/>
+      <line num="73" count="7" type="stmt"/>
+      <line num="75" count="1" type="stmt"/>
+      <line num="77" count="1" type="stmt"/>
       <line num="85" count="1" type="stmt"/>
-    </file>
-    <file name="data.js" path="C:\Users\Agi\Documents\projects\futureproof-projects\apiPractice\server\data.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
